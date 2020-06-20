@@ -4,6 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
 class DetailsScreen extends StatelessWidget {
+
+    final String text;
+    final int casesNum;
+    final String casesIncrease;
+
+  const DetailsScreen({Key key, this.text, this.casesNum, this.casesIncrease}) : super(key: key);
+
+
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -127,14 +137,14 @@ class DetailsScreen extends StatelessWidget {
     return Row(
       children: [
         Text(
-          '576 ',
+          '$casesNum ',
           style: Theme.of(context)
               .textTheme
               .display3
               .copyWith(color: kPrimaryColor, height: 1.2),
         ),
         Text(
-          '5.7%',
+          casesIncrease,
           style: TextStyle(
             color: kPrimaryColor,
           ),
@@ -149,7 +159,7 @@ class DetailsScreen extends StatelessWidget {
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
-          'New Cases',
+          text,
           style: TextStyle(
             color: kTextColor,
             fontWeight: FontWeight.w600,

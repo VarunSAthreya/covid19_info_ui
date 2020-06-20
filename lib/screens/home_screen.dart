@@ -31,19 +31,28 @@ class HomeScreen extends StatelessWidget {
                 runSpacing: 20.0,
                 children: [
                   InfoCard(
-                    press: () {},
+                    press: () => Navigator.push(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => DetailsScreen(text: 'Confirmed Cases', casesNum: 10169, casesIncrease: '1.65%',))),
                     title: 'Confirmed Cases',
                     iconColor: Color(0xFFFF9c00),
                     effectedNum: 10169,
                   ),
                   InfoCard(
-                    press: () {},
+                    press: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailsScreen(text: 'Total Deaths', casesNum: 175, casesIncrease: '0.3%',))),
                     title: 'Total Deaths',
                     iconColor: Color(0xFFFF2055),
                     effectedNum: 175,
                   ),
                   InfoCard(
-                    press: () {},
+                    press: () => Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => DetailsScreen(text: 'Total Recovered',casesNum: 986, casesIncrease: '5.5%',))),
                     title: 'Total Recovered',
                     iconColor: Color(0xFF30E3C2),
                     effectedNum: 986,
@@ -52,7 +61,7 @@ class HomeScreen extends StatelessWidget {
                     press: () => Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => DetailsScreen())),
+                            builder: (context) => DetailsScreen(text: 'New Cases',casesNum: 152,casesIncrease: '1.2%',))),
                     title: 'New Cases',
                     iconColor: Color(0xFF3836D6),
                     effectedNum: 152,
